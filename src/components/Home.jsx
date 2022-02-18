@@ -1,7 +1,7 @@
 import React from 'react'
 import imagebg from '../assets/bg.jpg'
 import { Card, Container } from 'react-bootstrap'
-
+import Products from './Products'
 
 const Home = () => {
     return (
@@ -17,6 +17,7 @@ const Home = () => {
                     </Container>
                 </Card.ImgOverlay>
             </Card>
+            <Products />
         </div>
     )
 }

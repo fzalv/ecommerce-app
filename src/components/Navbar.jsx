@@ -1,44 +1,45 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
                 <div class="container">
-                    <a class="navbar-brand fw-bold fs-4" href="#">MARISHOP</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <Link class="navbar-brand fw-bold fs-4" to="/">MARISHOP</Link>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link class="nav-link active" aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Product</a>
+                                <Link class="nav-link" to="/products">Products</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
+                                <Link class="nav-link" to="/about">About</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <Link class="nav-link" to="/contact">Contact</Link>
                             </li>
                         </ul>
                         <div className="buttons">
-                            <a href="" className='btn btn-outline-dark mx-2'>
+                            <Link to="/login" className='btn btn-outline-dark mx-2'>
                                 <FontAwesomeIcon icon={solid('right-to-bracket')} className='me-2' />
                                 Masuk
-                            </a>
-                            <a href="" className='btn btn-outline-dark mx-2'>
+                            </Link>
+                            <Link to="/register" className='btn btn-outline-dark mx-2'>
                                 <FontAwesomeIcon icon={solid('user-plus')} className='me-2' />
                                 Daftar
-                            </a>
-                            <a href="" className='btn btn-outline-dark mx-2'>
+                            </Link>
+                            <Link to="/cart" className='btn btn-outline-dark mx-2'>
                                 <FontAwesomeIcon icon={solid('cart-shopping')} className='me-2' />
                                 Troli
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

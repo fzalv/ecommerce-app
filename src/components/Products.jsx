@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Col, Row, Button, Card } from 'react-bootstrap';
 import Skeleton from 'react-loading-skeleton';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
     const [data, setData] = useState([]);
@@ -16,7 +17,7 @@ const Products = () => {
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
-                console.log(filter)
+                console.log(filter);
             }
 
             return () => {
@@ -72,7 +73,7 @@ const Products = () => {
                                         <Card.Text className='lead fw-bold'>
                                             ${product.price}
                                         </Card.Text>
-                                        <a href='#' className='btn btn-outline-dark'>Buy Now</a>
+                                        <Link to={`/products/${product.id}`} className='btn btn-outline-dark'>Buy Now</Link>
                                     </Card.Body>
                                 </Card>
                             </Col>

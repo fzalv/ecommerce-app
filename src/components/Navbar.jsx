@@ -2,8 +2,10 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const state = useSelector((state) => state.handleCart)
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
@@ -38,7 +40,7 @@ const Navbar = () => {
                             </Link>
                             <Link to="/cart" className='btn btn-outline-dark mx-2'>
                                 <FontAwesomeIcon icon={solid('cart-shopping')} className='me-2' />
-                                Troli
+                                Troli ({state.length})
                             </Link>
                         </div>
                     </div>
